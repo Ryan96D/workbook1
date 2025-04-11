@@ -8,14 +8,14 @@ public class Apr11_Basic_calculator {
         Scanner BcalcReader = new Scanner(System.in);
 
         // First prompt/question print (For readability)
-        System.out.println("Enter first number:");
+        System.out.print("Enter first number:");
 
         // 1st "double" input read using (Scanner name).nextDouble()
         double input1 = BcalcReader.nextDouble();
 
 
         // Second prompt/question print (For readability)
-        System.out.println("Enter second number:");
+        System.out.print("Enter second number:");
 
         // 2nd "double" input read using (Scanner name).nextDouble()
         double input2 = BcalcReader.nextDouble();
@@ -28,7 +28,7 @@ public class Apr11_Basic_calculator {
 
 
         // This part asks the user what operation they want to perform (add, subtract, multiply, or divide) and prints the question to the console.
-        System.out.println("I can only multiply, do you want to proceed?");
+        System.out.print("I can only multiply, do you want to proceed?");
 
         String wordinput1 = BcalcReader.nextLine();  // Reads String type input and sets as "wordinput1"
         System.out.println("You've chosen " + wordinput1 + ". Regardless, I will multiply :P");
