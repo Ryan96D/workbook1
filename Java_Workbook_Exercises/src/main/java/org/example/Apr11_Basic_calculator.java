@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
-public class BasicCalculator {
+public class Apr11_Basic_calculator {
     public static void main(String[] args) {
         // create scanner
         Scanner BcalcReader = new Scanner(System.in);
@@ -30,11 +30,13 @@ public class BasicCalculator {
         // This part asks the user what operation they want to perform (add, subtract, multiply, or divide) and prints the question to the console.
         System.out.println("I can only multiply, do you want to proceed?");
 
-        String wordinput1 = BcalcReader.nextLine();  // To make sure no hiccups happen (consume newline character)
+        String wordinput1 = BcalcReader.nextLine();  // Reads String type input and sets as "wordinput1"
         System.out.println("You've chosen " + wordinput1 + ". Regardless, I will multiply :P");
 
         // multiply
         double result1 = input1 * input2;
         System.out.println("Result: " + result1);
+
+
     }
 }
