@@ -15,10 +15,15 @@ public class Apr11_Payroll_Calculator {
         System.out.print("How much is your hourly payrate?");
         double Payratehourly = PayReader.nextDouble();
 
-        double Grosspay = Hoursworked * Payratehourly;
+        double Grosspay;
+        if (Hoursworked <= 40) {
+            Grosspay = Hoursworked * Payratehourly;
+        } else {
 
+            Grosspay = ((Hoursworked - 40) * (Payratehourly * 1.5)) + (Hoursworked * Payratehourly);
+        }
+        System.out.println("Hello " + (Employeename) + " Your Pay this week is: $" + String.format("%.2f", Grosspay));
 
-        System.out.println("Hello " + Employeename + ", your Gross pay for this week is: $" + Grosspay);
 
 
 

@@ -26,7 +26,7 @@ public class Apr11_FridayminiExercises {
 //        System.out.println("What is your Agility Value?");
 //        int Agilityvalue = GameReader.nextInt();
 //
-//        System.out.println("Hero: " + Playername + "| Strength: " + Strengthvalue + "| Agility: " + Agilityvalue + "|");
+//        System.out.println("Hero: " + Playername + " | Strength: " + Strengthvalue + " | Agility: " + Agilityvalue + " |");
 //
 //        System.out.println("What is your current level?");
 //        int Playerlevel = GameReader.nextInt();
@@ -38,7 +38,7 @@ public class Apr11_FridayminiExercises {
 //        System.out.println("How many Silver coins do you have?");
 //        int Silvercoins = GameReader.nextInt();
 //        int Totalmoney = (Goldcoins * 10) + Silvercoins;
-//        System.out.println("You have " + Totalmoney + "in Niflheim dollars");
+//        System.out.println("You have " + Totalmoney + " in Niflheim dollars");
 //
 //        System.out.println("Dice rolling...");
 //        int diceRoll1 = (int)(Math.random() * 6) + 1; // generates 1 to 6 randomly (Can Reuse at any time)
@@ -126,15 +126,23 @@ public class Apr11_FridayminiExercises {
         // Convert choice number to words
         String CPUrpsChoice = "PlaceholderStringValue"; // Sets as value to be changed later
         if (CpuRPSnum == 1) {
-            CPUrpsChoice =  "Rock";
+            CPUrpsChoice =  "rock";
         } else if (CpuRPSnum == 2) {
-            CPUrpsChoice = "Paper";
+            CPUrpsChoice = "paper";
         } else { // Scissors is only choice left, so no need to set and if statements
-            CPUrpsChoice = "Scissors";
+            CPUrpsChoice = "scissors";
         }
         System.out.println("CPU chose: " + CPUrpsChoice);
 
-
+        if (RPSchoice.equals(CPUrpsChoice)) {
+            System.out.println("It's a tie!!!");
+        } else if ((RPSchoice.equals("rock") && CPUrpsChoice.equals("scissors")) ||
+                (RPSchoice.equals("scissors") && CPUrpsChoice.equals("paper")) ||
+                (RPSchoice.equals("paper") && CPUrpsChoice.equals("rock"))) {
+            System.out.println("You win! Congrats!");
+        } else {
+            System.out.println("Computer wins! :P ");
+        }
 
 
 
