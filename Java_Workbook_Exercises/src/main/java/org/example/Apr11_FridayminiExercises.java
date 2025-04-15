@@ -20,8 +20,8 @@ public class Apr11_FridayminiExercises {
         GameReader.nextLine(); // Consume the leftover newline from last newint prompt
 
         System.out.println("Dice rolling...");
-        int diceRoll = (int)(Math.random() * 6) + 1; // generates 1 to 6 randomly (Can Reuse at any time)
-        System.out.println("You rolled a " + diceRoll +"!");
+        int diceRoll = (int) (Math.random() * 6) + 1; // generates 1 to 6 randomly (Can Reuse at any time)
+        System.out.println("You rolled a " + diceRoll + "!");
 
         System.out.println("What is your Strength Value?");
         int Strengthvalue = GameReader.nextInt();
@@ -34,7 +34,7 @@ public class Apr11_FridayminiExercises {
 
         System.out.println("What is your current level?");
         int Playerlevel = GameReader.nextInt();
-        System.out.println("You are currently level " +Playerlevel);
+        System.out.println("You are currently level " + Playerlevel);
         System.out.println("XP gained! Level up! You are now level " + (Playerlevel += 1));
 
         GameReader.nextLine(); // Consume the leftover newline from last newint prompt
@@ -49,8 +49,8 @@ public class Apr11_FridayminiExercises {
         GameReader.nextLine(); // Consume the leftover newline last from newint prompt
 
         System.out.println("Dice rolling...");
-        int diceRoll1 = (int)(Math.random() * 6) + 1; // generates 1 to 6 randomly (Can Reuse at any time)
-        System.out.println("You rolled a " + diceRoll1 +"!");
+        int diceRoll1 = (int) (Math.random() * 6) + 1; // generates 1 to 6 randomly (Can Reuse at any time)
+        System.out.println("You rolled a " + diceRoll1 + "!");
 
         if (diceRoll1 % 2 == 0) {
             System.out.println("Your dice roll was even");
@@ -77,11 +77,13 @@ public class Apr11_FridayminiExercises {
         }
 
 
+        String Characterclass;
         while (true) {
             System.out.println("What character class are you?");
             System.out.println("Choose between Warrior, Mage, Cleric, Assassin, and Archer");
 
-            String Characterclass = GameReader.nextLine();
+            Characterclass = GameReader.nextLine();
+            System.out.println("You have chosen " + Characterclass + "!!");
 
             if (Characterclass.equalsIgnoreCase("warrior")) {
                 System.out.println("Your starting weapon is: Steel Sword");
@@ -136,13 +138,13 @@ public class Apr11_FridayminiExercises {
         String RPSchoice = GameReader.nextLine().toLowerCase();
 
         // Generate the computer's choice (random number 1-3)
-        int CpuRPSnum = (int)(Math.random() * 3) + 1;
+        int CpuRPSnum = (int) (Math.random() * 3) + 1;
 
 
         // Convert choice number to words
         String CPUrpsChoice = "PlaceholderStringValue"; // Sets as value to be changed later (will not show as green)
         if (CpuRPSnum == 1) {
-            CPUrpsChoice =  "rock";
+            CPUrpsChoice = "rock";
         } else if (CpuRPSnum == 2) {
             CPUrpsChoice = "paper";
         } else { // Scissors is only choice left, so no need to set and if statements
@@ -162,7 +164,7 @@ public class Apr11_FridayminiExercises {
         }
 
         System.out.println("You have reached a potion shop on your journey!");
-        System.out.println("You have $" + Totalmoney + " in Niflheim dollars" );
+        System.out.println("You have $" + Totalmoney + " in Niflheim dollars");
         int Potionpurchase = 0;
         do {
             System.out.println("How many potions would you like to purchase?");
@@ -203,13 +205,13 @@ public class Apr11_FridayminiExercises {
         System.out.print("How much XP have you accumulated throughout your journey so far? ");
         int Xp = GameReader.nextInt();
         int XpNeededperLevel = 100 + Playerlevel * 5;
-        int Levelup = (int)Math.floor(Xp / XpNeededperLevel);
+        int Levelup = (int) Math.floor(Xp / XpNeededperLevel);
         int Leftoverxp = Xp % XpNeededperLevel;
 
         System.out.println("You have leveled up " + Levelup + " times!");
         Playerlevel += Levelup;
-        System.out.println("You are now level " +Playerlevel+ "!");
-        System.out.println("You have " +Leftoverxp+ " XP points left!");
+        System.out.println("You are now level " + Playerlevel + "!");
+        System.out.println("You have " + Leftoverxp + " XP points left!");
 
         GameReader.nextLine(); // Consume the leftover newline from last newint prompt
 
@@ -237,6 +239,67 @@ public class Apr11_FridayminiExercises {
             }
         }
 
+        System.out.println("How much HP do you currently have?");
+        int playerHp = GameReader.nextInt();
+        System.out.println("How much HP does the monster have?");
+        int monsterHP = GameReader.nextInt();
+        System.out.println("The monster you tested your weapon on earlier has returned!!!");
+        System.out.println("It looks angry! It wants revenge!!!");
+        System.out.println("You deal " + Damage + " to the monster!");
+        monsterHP -= Damage;
+        System.out.println("It has " + monsterHP + " hp left!!");
+        System.out.println("The monster deals 15 damage to you in return!");
+        playerHp -= 15;
+        System.out.println("You have " + playerHp + " hp left!");
+
+        GameReader.nextLine(); // Consume the leftover newline from last newint prompt
+
+        System.out.println("You come across a treasure chest... it may be trapped... ");
+        System.out.println("Would you like to take a chance and open it? (yes/no)");
+
+        String playerChoice = "";
+        while (!(playerChoice.equals("yes") || playerChoice.equals("y") || playerChoice.equals("no") || playerChoice.equals("n"))) {
+            playerChoice = GameReader.nextLine().toLowerCase();  // Read and normalize the input
+
+            if (playerChoice.equals("yes") || playerChoice.equals("y")) {
+                double randomChance = Math.random();  // Generates a value between 0.0 and 1.0
+                if (randomChance < 0.5) {
+                    // If random chance is less than 0.5, player gets gold
+                    int goldGain = (int) (Math.random() * 100) + 1;  // Random gold between 1 and 100
+                    Totalmoney += goldGain;
+                    System.out.println("You found " + goldGain + " gold! Total gold: " + Totalmoney);
+                } else {
+                    // If random chance is 0.5 or higher, player loses HP
+                    int damage = (int) (Math.random() * 50) + 15;  // Random damage between 15 and 50
+                    playerHp -= damage;
+                    System.out.println("Oh no! The chest slams shut on your hand!! You lost " + damage + " HP. Remaining HP: " + playerHp);
+                }
+                break;  // Exit the loop if a valid response is received
+            } else if (playerChoice.equals("no") || playerChoice.equals("n")) {
+                System.out.println("You decided not to open the chest.");
+                break;  // Exit the loop if a valid response is received
+            } else {
+                System.out.println("Invalid input. Please enter Y/N or yes/no.");
+            }
+
+
+        }
+
+        System.out.println("What is your current score?");
+        int playerScore = GameReader.nextInt();
+        GameReader.nextLine(); // Consume the leftover newline from last newint prompt
+        if (playerScore > 100) {
+            System.out.println("It's a NEW RECORD!!! You beat the current highscore!");
+        } else {
+            System.out.println("Try again next time sucka! >:D ");
+        }
+
+        System.out.println("You walk into the Guild's power level reader room ");
+        System.out.println("Welcome " + Playername + ", you chose the " + Characterclass + " class.");
+        int characterint = Playerage * 2;
+        System.out.println("You have " +Strengthvalue+" Strength, "+Agilityvalue+" Agility, and "+characterint+" Intelligence...");
+        int powerLevel = Strengthvalue * Agilityvalue * characterint;
+        System.out.println("Your total power level is: "+powerLevel+".");
 
 
 
