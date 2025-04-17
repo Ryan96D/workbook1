@@ -1,4 +1,4 @@
-package org.example;
+package week1;
 
 public class Apr10_Operations_Java {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package org.example;
+package week1;
 
 public class RentalCarCalc {
     public static void main(String[] args) {

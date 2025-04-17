@@ -1,4 +1,4 @@
-package org.example;
+package week1;
 
 public class Coinflip {
     public static void main(String[] args) {

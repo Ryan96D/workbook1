@@ -1,8 +1,6 @@
-package org.example;
+package week1;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class Apr11_FridayminiExercises {
     public static void main(String[] args) {

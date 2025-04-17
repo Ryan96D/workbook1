@@ -1,4 +1,4 @@
-package org.example;
+package week1;
 
 
 public class Apr10_Math_Exercises {
