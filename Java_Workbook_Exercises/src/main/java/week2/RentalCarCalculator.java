@@ -36,35 +36,34 @@ package week2;
             System.out.print("Enter your current age: ");
             int age = scanner.nextInt();
 
-            // Calculate rental cost
-            double basicRentalCost = dailyRate * rentalDays;
+            // Calculate rental cost of days
+            double basicRental = dailyRate * rentalDays;
 
             // Calculate options cost
-            double optionsCost = 0;
+            double options = 0;
             if (tollTagChoice.equals("yes")||tollTagChoice.equals("y")) {
-                optionsCost += toll * rentalDays;
+                options += toll * rentalDays;
             }
             if (gpsChoice.equals("yes")||gpsChoice.equals("y")) {
-                optionsCost += gps * rentalDays;
+                options += gps * rentalDays;
             }
             if (roadsideChoice.equals("yes")||roadsideChoice.equals("y")) {
-                optionsCost += roadsideAssist * rentalDays;
+                options += roadsideAssist * rentalDays;
             }
 
-            // Calculate underage surchargeunder 25
             double underageSurcharge = 0;
             if (age < under25) {
-                underageSurcharge = basicRentalCost * agePriceModify;
+                underageSurcharge = basicRental * agePriceModify;
             }
 
             // Calculate total cost
-            double totalCost = basicRentalCost + optionsCost + underageSurcharge;
+            double totalCost = basicRental + options + underageSurcharge;
 
 
-            System.out.println("\n--- Rental Car Estimate ---");
+            System.out.println("\n||| Rental Car Estimate |||");
             System.out.printf("Pickup Date: %s\n", pickupDate);
-            System.out.printf("Basic Car Rental: $%.2f\n", basicRentalCost);
-            System.out.printf("Options Cost: $%.2f\n", optionsCost);
+            System.out.printf("Basic Car Rental: $%.2f\n", basicRental);
+            System.out.printf("Options Cost: $%.2f\n", options);
             System.out.printf("Underage Driver Surcharge: $%.2f\n", underageSurcharge);
             System.out.printf("Total Cost: $%.2f\n", totalCost);
 
