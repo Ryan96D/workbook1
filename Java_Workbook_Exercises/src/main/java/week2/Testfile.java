@@ -13,21 +13,27 @@ public class Testfile {
 //        int quantity = Integer.parseInt(splittedInput[2]);
 //        double price = Double.parseDouble(splittedInput[3]);
 //        System.out.println(id+" | "+name+" | "+quantity+" | "+price);
-        LocalDate today = LocalDate.now(); //Gets today
-        System.out.println("1) "+today);
-        LocalDate randomDate = LocalDate.of(2000,1,29); // stores selected date as a value
-        System.out.println(randomDate);
+//        LocalDate today = LocalDate.now(); //Gets today
+//        System.out.println("1) "+today);
+//        LocalDate randomDate = LocalDate.of(2000,1,29); // stores selected date as a value
+//        System.out.println(randomDate);
+//
+//
+//        LocalTime timeNow = LocalTime.now(); // gets current time
+//        System.out.println("2) "+timeNow);
+//        LocalTime chosenTime = LocalTime.of(22,50);
+//        System.out.println(chosenTime);
+//
+//        LocalDateTime currentDatenTime = LocalDateTime.now(); //combines both Date and Time
+//        System.out.println("3) "+currentDatenTime);
+//        LocalDateTime ChosenDT = LocalDateTime.of(2012,12, 12 , 12 ,12);
+//        System.out.println(ChosenDT);
 
-
-        LocalTime timeNow = LocalTime.now(); // gets current time
-        System.out.println("2) "+timeNow);
-        LocalTime chosenTime = LocalTime.of(22,50);
-        System.out.println(chosenTime);
-
-        LocalDateTime currentDatenTime = LocalDateTime.now(); //combines both Date and Time
-        System.out.println("3) "+currentDatenTime);
-        LocalDateTime ChosenDT = LocalDateTime.of(2012,12, 12 , 12 ,12);
-        System.out.println(ChosenDT);
+        float subtotal = 22.87F;
+        float tax = subtotal * 0.0825f;
+        float totalDue = subtotal + tax;
+        double homieTax = totalDue * 2;
+        System.out.printf("Total due is: %.2f and also... homie tax is: %.2f\n", totalDue, homieTax); // can do with String.format too, all values go at the end in commas.
 
 
     }
