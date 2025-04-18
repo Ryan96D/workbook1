@@ -42,6 +42,6 @@ public class AdressBuilder {
         System.out.println(shippingAddress);
 
         inputReader.close();
-        
+
     }
 }
