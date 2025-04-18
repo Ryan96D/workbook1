@@ -2,7 +2,7 @@ package week2;
 
 import java.util.Scanner;
 
-public class AdressBuilder {
+public class AddressBuilder {
     static Scanner inputReader = new Scanner(System.in);
     public static void main(String[] args) {
 
